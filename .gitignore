@@ -1,0 +1,4 @@
+*.d.ts
+*.d.ts.map
+node_modules
+npm-debug.log

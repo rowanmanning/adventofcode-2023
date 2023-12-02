@@ -1,0 +1,16 @@
+{
+	"extends": [
+		"@rowanmanning/eslint-config"
+	],
+	"parserOptions": {
+		"sourceType": "module"
+	},
+	"rules": {
+		"jsdoc/require-description": "off",
+		"jsdoc/require-param-description": "off",
+		"jsdoc/require-property-description": "off",
+		"jsdoc/require-returns-description": "off",
+		"max-depth": "off",
+		"sort-imports": "off"
+	}
+}

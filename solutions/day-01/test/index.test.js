@@ -50,7 +50,7 @@ describe('day 1', () => {
 		describe('with puzzle input', () => {
 
 			it('returns the expected result', () => {
-				assert.equal(solution2(puzzleInput), 'template');
+				assert.equal(solution2(puzzleInput), 54265);
 			});
 
 		});

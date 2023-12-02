@@ -1,4 +1,3 @@
-
 /**
  * Split an input string into characters.
  *

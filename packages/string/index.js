@@ -1,4 +1,3 @@
-
 /**
  * Check whether a string is made up of only numbers.
  *

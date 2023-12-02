@@ -1,6 +1,5 @@
-
-import {lines, words} from '@rowanmanning/adventofcode-input-parsing';
-import {sum} from '@rowanmanning/adventofcode-math';
+import { lines, words } from '@rowanmanning/adventofcode-input-parsing';
+import { sum } from '@rowanmanning/adventofcode-math';
 
 /**
  * @param {string} input
@@ -13,14 +12,16 @@ export function solution1(input) {
 		red: 12
 	};
 	return parseGameInput(input)
-		.filter(game => game.rounds.every(round => {
-			return (
-				round.blue <= bag.blue &&
-				round.green <= bag.green &&
-				round.red <= bag.red
-			);
-		}))
-		.map(game => game.id)
+		.filter((game) =>
+			game.rounds.every((round) => {
+				return (
+					round.blue <= bag.blue &&
+					round.green <= bag.green &&
+					round.red <= bag.red
+				);
+			})
+		)
+		.map((game) => game.id)
 		.reduce(sum);
 }
 
@@ -30,10 +31,10 @@ export function solution1(input) {
  */
 export function solution2(input) {
 	return parseGameInput(input)
-		.map(game => {
-			const blue = Math.max(...game.rounds.map(round => round.blue));
-			const green = Math.max(...game.rounds.map(round => round.green));
-			const red = Math.max(...game.rounds.map(round => round.red));
+		.map((game) => {
+			const blue = Math.max(...game.rounds.map((round) => round.blue));
+			const green = Math.max(...game.rounds.map((round) => round.green));
+			const red = Math.max(...game.rounds.map((round) => round.red));
 			return blue * green * red;
 		})
 		.reduce(sum);
@@ -79,7 +80,9 @@ export function parseGameLine(lineInput) {
  * @returns {GameRound}
  */
 export function parseGameRoundInput(roundInput) {
-	const draws = Object.fromEntries(roundInput.split(', ').map(parseGameDrawInput));
+	const draws = Object.fromEntries(
+		roundInput.split(', ').map(parseGameDrawInput)
+	);
 	return {
 		blue: draws.blue || 0,
 		green: draws.green || 0,

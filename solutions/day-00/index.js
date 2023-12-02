@@ -1,4 +1,3 @@
-
 /**
  * @param {string} input
  * @returns {null}

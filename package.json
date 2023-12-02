@@ -16,16 +16,17 @@
     "solutions/*"
   ],
   "scripts": {
-    "verify": "npm run verify:eslint && npm run verify:types",
-    "verify:eslint": "eslint .",
+    "verify": "npm run verify:biome && npm run verify:types",
+    "verify:biome": "npx @biomejs/biome lint .",
     "verify:types": "tsc --noEmit --project ./jsconfig.json",
+    "format": "npm run format:biome",
+    "format:biome": "npx @biomejs/biome format . --write",
     "test": "npm run test:unit",
     "test:unit": "node --test"
   },
   "devDependencies": {
-    "@rowanmanning/eslint-config": "^8.0.1",
+    "@biomejs/biome": "1.4.1",
     "@types/node": "^20.10.2",
-    "eslint": "^8.55.0",
     "typescript": "^5.3.2"
   }
 }

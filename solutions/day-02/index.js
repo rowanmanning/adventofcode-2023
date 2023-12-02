@@ -21,7 +21,7 @@ export function solution1(input) {
 			);
 		}))
 		.map(game => game.id)
-		.reduce(sum, 0);
+		.reduce(sum);
 }
 
 /**
@@ -36,7 +36,7 @@ export function solution2(input) {
 			const red = Math.max(...game.rounds.map(round => round.red));
 			return blue * green * red;
 		})
-		.reduce(sum, 0);
+		.reduce(sum);
 }
 
 /**

@@ -12,7 +12,7 @@ export function solution1(input) {
 			const numericCharacters = line.split('').filter(isNumeric);
 			return Number(`${numericCharacters.at(0)}${numericCharacters.at(-1)}`);
 		})
-		.reduce(sum, 0);
+		.reduce(sum);
 }
 
 /**
@@ -43,7 +43,7 @@ export function solution2(input) {
 				}, []);
 			return Number(`${numbers.at(0)}${numbers.at(-1)}`);
 		})
-		.reduce(sum, 0);
+		.reduce(sum);
 }
 
 /**

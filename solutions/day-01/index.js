@@ -1,5 +1,5 @@
 
-import {lines} from '@rowanmanning/adventofcode-input-parsing';
+import {characters, lines} from '@rowanmanning/adventofcode-input-parsing';
 import {sum} from '@rowanmanning/adventofcode-math';
 
 /**
@@ -9,7 +9,7 @@ import {sum} from '@rowanmanning/adventofcode-math';
 export function solution1(input) {
 	return lines(input)
 		.map(line => {
-			const numericCharacters = line.split('').filter(isNumeric);
+			const numericCharacters = characters(line).filter(isNumeric);
 			return Number(`${numericCharacters.at(0)}${numericCharacters.at(-1)}`);
 		})
 		.reduce(sum);
@@ -29,7 +29,7 @@ export function solution2(input) {
 
 	return lines(input)
 		.map(line => {
-			const numbers = line.split('')
+			const numbers = characters(line)
 				.reduce((/** @type {string[]} */ result, character, index) => {
 					if (isNumeric(character)) {
 						result.push(character);

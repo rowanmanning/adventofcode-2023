@@ -1,5 +1,5 @@
 
-import {lines} from '@rowanmanning/adventofcode-input-parsing';
+import {lines, words} from '@rowanmanning/adventofcode-input-parsing';
 import {sum} from '@rowanmanning/adventofcode-math';
 
 /**
@@ -66,7 +66,7 @@ export function parseGameInput(gameInput) {
  */
 export function parseGameLine(lineInput) {
 	const [name, roundsInput] = lineInput.split(': ');
-	const id = Number(name.split(' ').at(-1));
+	const id = Number(words(name).at(-1));
 	const rounds = roundsInput.split('; ').map(parseGameRoundInput);
 	return {
 		id,
@@ -92,6 +92,6 @@ export function parseGameRoundInput(roundInput) {
  * @returns {[string, number]}
  */
 export function parseGameDrawInput(drawInput) {
-	const [count, color] = drawInput.split(' ');
+	const [count, color] = words(drawInput);
 	return [color, Number(count)];
 }

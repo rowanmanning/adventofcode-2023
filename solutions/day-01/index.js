@@ -1,4 +1,5 @@
 
+import {lines} from '@rowanmanning/adventofcode-input-parsing';
 import {sum} from '@rowanmanning/adventofcode-math';
 
 /**
@@ -6,8 +7,7 @@ import {sum} from '@rowanmanning/adventofcode-math';
  * @returns {number}
  */
 export function solution1(input) {
-	return input
-		.split('\n')
+	return lines(input)
 		.map(line => {
 			const numericCharacters = line.split('').filter(isNumeric);
 			return Number(`${numericCharacters.at(0)}${numericCharacters.at(-1)}`);
@@ -27,8 +27,7 @@ export function solution2(input) {
 	];
 	const numberWordsRegExp = new RegExp(`^(${numberWords.join('|')})`, 'g');
 
-	return input
-		.split('\n')
+	return lines(input)
 		.map(line => {
 			const numbers = line.split('')
 				.reduce((/** @type {string[]} */ result, character, index) => {

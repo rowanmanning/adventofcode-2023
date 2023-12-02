@@ -1,4 +1,5 @@
 
+import {lines} from '@rowanmanning/adventofcode-input-parsing';
 import {sum} from '@rowanmanning/adventofcode-math';
 
 /**
@@ -56,7 +57,7 @@ export function solution2(input) {
  * @returns {Game[]}
  */
 export function parseGameInput(gameInput) {
-	return gameInput.split('\n').map(parseGameLine);
+	return lines(gameInput).map(parseGameLine);
 }
 
 /**

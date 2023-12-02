@@ -20,7 +20,7 @@ describe('day 0', () => {
 		describe('with test data', () => {
 
 			it('returns the expected result', () => {
-				assert.equal(solution1(exampleInput), 'TODO');
+				assert.equal(solution1(exampleInput), null);
 			});
 
 		});
@@ -28,7 +28,7 @@ describe('day 0', () => {
 		describe('with puzzle input', () => {
 
 			it('returns the expected result', () => {
-				assert.equal(solution1(puzzleInput), 'TODO');
+				assert.equal(solution1(puzzleInput), null);
 			});
 
 		});
@@ -40,7 +40,7 @@ describe('day 0', () => {
 		describe('with test data', () => {
 
 			it('returns the expected result', () => {
-				assert.equal(solution2(exampleInput), 'TODO');
+				assert.equal(solution2(exampleInput), null);
 			});
 
 		});
@@ -48,7 +48,7 @@ describe('day 0', () => {
 		describe('with puzzle input', () => {
 
 			it('returns the expected result', () => {
-				assert.equal(solution2(puzzleInput), 'TODO');
+				assert.equal(solution2(puzzleInput), null);
 			});
 
 		});

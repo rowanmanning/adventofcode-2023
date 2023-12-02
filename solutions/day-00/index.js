@@ -1,16 +1,18 @@
 
 /**
  * @param {string} input
- * @returns {string}
+ * @returns {null}
  */
 export function solution1(input) {
-	return input;
+	console.log('Input was', input);
+	return null;
 }
 
 /**
  * @param {string} input
- * @returns {string}
+ * @returns {null}
  */
 export function solution2(input) {
-	return input;
+	console.log('Input was', input);
+	return null;
 }

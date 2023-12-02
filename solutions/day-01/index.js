@@ -42,7 +42,6 @@ export function solution2(input) {
 					}
 					return result;
 				}, []);
-			console.log(numbers);
 			return Number(`${numbers.at(0)}${numbers.at(-1)}`);
 		})
 		.reduce(sum, 0);

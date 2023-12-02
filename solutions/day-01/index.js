@@ -1,5 +1,6 @@
 
 import {characters, lines} from '@rowanmanning/adventofcode-input-parsing';
+import {isNumeric} from '@rowanmanning/adventofcode-string';
 import {sum} from '@rowanmanning/adventofcode-math';
 
 /**
@@ -44,12 +45,4 @@ export function solution2(input) {
 			return Number(`${numbers.at(0)}${numbers.at(-1)}`);
 		})
 		.reduce(sum);
-}
-
-/**
- * @param {string} string
- * @returns {boolean}
- */
-export function isNumeric(string) {
-	return Number.isInteger(Number(string));
 }

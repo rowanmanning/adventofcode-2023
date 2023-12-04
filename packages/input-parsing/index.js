@@ -25,5 +25,5 @@ export function lines(input) {
  * @returns {string[]} - Returns the words in the input.
  */
 export function words(input) {
-	return input.trim().split(' ');
+	return input.trim().split(/\s+/);
 }

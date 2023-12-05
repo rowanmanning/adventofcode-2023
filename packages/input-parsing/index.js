@@ -12,10 +12,12 @@ export function characters(input) {
  * Split an input string into lines.
  *
  * @param {string} input - The full input.
+ * @param {number} [breaks] - How many line breaks to split on.
  * @returns {string[]} - Returns the lines in the input.
  */
-export function lines(input) {
-	return input.trim().split('\n');
+export function lines(input, breaks = 1) {
+	const splitter = Array(breaks).fill('\n').join('');
+	return input.trim().split(splitter);
 }
 
 /**

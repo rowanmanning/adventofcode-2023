@@ -11,7 +11,9 @@ export function solution1(input) {
 	function walkMap(type, value) {
 		const map = maps.find(({ from }) => from === type);
 		if (map) {
-			const range = map.ranges.find(({ from, to }) => value >= from && value <= to);
+			const range = map.ranges.find(
+				({ from, to }) => value >= from && value <= to
+			);
 			return walkMap(map.to, range ? value + range.offset : value);
 		}
 		return value;

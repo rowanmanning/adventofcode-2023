@@ -6,7 +6,9 @@ import { multiply } from '@rowanmanning/adventofcode-math';
  * @returns {number}
  */
 export function solution1(input) {
-	return parseMultipleRaceInput(input).map(getButtonPressCount).reduce(multiply);
+	return parseMultipleRaceInput(input)
+		.map(getButtonPressCount)
+		.reduce(multiply);
 }
 
 /**

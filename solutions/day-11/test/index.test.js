@@ -35,15 +35,15 @@ describe('day 11', () => {
 	});
 
 	describe('solution 2', () => {
-		describe.skip('with test data', () => {
+		describe('with test data', () => {
 			it('returns the expected result', () => {
-				assert.equal(solution2(exampleInput), null);
+				assert.equal(solution2(exampleInput), 82000210);
 			});
 		});
 
-		describe.skip('with puzzle input', () => {
+		describe('with puzzle input', () => {
 			it('returns the expected result', () => {
-				assert.equal(solution2(puzzleInput), null);
+				assert.equal(solution2(puzzleInput), 731244261352);
 			});
 		});
 	});

@@ -86,10 +86,11 @@ const HAND_TYPE_RANKING = Object.values(HAND_SIGNATURE_TO_TYPE);
  * @returns {HandType}
  */
 function getHandType(hand, { jackIsJoker = false } = {}) {
+	/** @type {{[key: string]: string[] | undefined}} */
 	const groups = groupBy(hand.cards);
 	if (jackIsJoker && groups.J) {
 		const jokers = groups.J;
-		delete groups.J;
+		groups.J = undefined;
 		const biggestGroup = Object.values(groups).sort(
 			sortByProperty('length')
 		)[0];
@@ -101,7 +102,8 @@ function getHandType(hand, { jackIsJoker = false } = {}) {
 		}
 	}
 	const handSignature = Object.values(groups)
-		.map((group) => group.length)
+		.filter((group) => group)
+		.map((group) => group?.length)
 		.sort()
 		.join('');
 	return HAND_SIGNATURE_TO_TYPE[handSignature];
@@ -161,7 +163,8 @@ const CARD_STRENGTHS = {
  */
 function cardStrength(card, { jackIsJoker = false } = {}) {
 	const cardStrengthMap = jackIsJoker
-		? { ...CARD_STRENGTHS, J: 1 }
+		? // biome-ignore lint/style/useNamingConvention: nah
+		  { ...CARD_STRENGTHS, J: 1 }
 		: CARD_STRENGTHS;
 	return cardStrengthMap[card] ?? Number(card);
 }

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { before, describe, it } from 'node:test';
-import { readFile } from 'node:fs/promises';
+import { loadFixture } from '@rowanmanning/adventofcode-test';
 
 import { solution1, solution2 } from '../index.js';
 
@@ -12,27 +12,11 @@ describe('day 10', () => {
 	let puzzleInput;
 
 	before(async () => {
-		const directory = new URL('.', import.meta.url).pathname;
-		exampleInput = await readFile(
-			`${directory}/fixtures/example-input.txt`,
-			'utf-8'
-		);
-		exampleInput2 = await readFile(
-			`${directory}/fixtures/example-input-2.txt`,
-			'utf-8'
-		);
-		exampleInput3 = await readFile(
-			`${directory}/fixtures/example-input-3.txt`,
-			'utf-8'
-		);
-		exampleInput4 = await readFile(
-			`${directory}/fixtures/example-input-4.txt`,
-			'utf-8'
-		);
-		puzzleInput = await readFile(
-			`${directory}/fixtures/puzzle-input.txt`,
-			'utf-8'
-		);
+		exampleInput = await loadFixture('example-input', import.meta);
+		exampleInput2 = await loadFixture('example-input-2', import.meta);
+		exampleInput3 = await loadFixture('example-input-3', import.meta);
+		exampleInput4 = await loadFixture('example-input-4', import.meta);
+		puzzleInput = await loadFixture('puzzle-input', import.meta);
 	});
 
 	describe('solution 1', () => {
